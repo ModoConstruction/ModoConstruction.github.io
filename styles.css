@@ -212,6 +212,7 @@ body {
 
 /* Countdown Timer */
 .countdown-container {
+    display:none;
     margin-bottom: 2rem;
     animation: fadeInUp 1s ease-out 0.6s both;
 }
