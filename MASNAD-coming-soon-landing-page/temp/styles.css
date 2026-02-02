@@ -1,0 +1,435 @@
+/* MASNAD Coming Soon Page Styles */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Main Container */
+.coming-soon-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #EDD1C5 0%, #F5E6DC 50%, #EDD1C5 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Background Pattern */
+.background-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+/* Decorative background elements */
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.circle-1 {
+  width: 600px;
+  height: 600px;
+  background: #3E4C33;
+  top: -200px;
+  right: -200px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 400px;
+  height: 400px;
+  background: #AB6953;
+  bottom: -150px;
+  left: -150px;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+  width: 300px;
+  height: 300px;
+  background: #BC8E6C;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 15s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, 30px) scale(1.05);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.08;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.12;
+  }
+}
+
+
+/* Main content wrapper */
+.content-wrapper {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Brand Section */
+.brand-section {
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.brand-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.logo-square svg path{
+    fill: #AB6953;
+    stroke: #3E4C33;
+}
+.logo-square {
+    width: 80px;
+    height: 80px;
+  /*  background: linear-gradient(135deg, #3E4C33 0%, #AB6953 100%);
+    border: 3px solid #BC8E6C; */
+    position: relative;
+    animation: rotateLogo 20s linear infinite;
+}
+/*
+.logo-square::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 2px solid #EDD1C5;
+} */
+
+@keyframes rotateLogo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #3E4C33;
+    letter-spacing: 0.15em;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(62, 76, 51, 0.1);
+}
+
+.brand-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #AB6953;
+    letter-spacing: 0.3em;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.brand-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #3E4C33;
+    opacity: 0.8;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+/* Coming Soon Label */
+.coming-soon-text {
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.coming-soon-text .label {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #EDD1C5;
+    background: #AB6953;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+/* Countdown Timer */
+.countdown-container {
+    display:none;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.countdown-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 2px solid #BC8E6C;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    min-width: 120px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.time-unit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(62, 76, 51, 0.15);
+    border-color: #AB6953;
+}
+
+.time-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #3E4C33;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.time-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #AB6953;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.time-separator {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #BC8E6C;
+    margin: 0 0.5rem;
+}
+
+/* Launch Date */
+.launch-date {
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.launch-date p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #3E4C33;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+/* Social Links */
+.social-links {
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.social-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #3E4C33;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    border: 2px solid #BC8E6C;
+    border-radius: 50%;
+    color: #3E4C33;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: #AB6953;
+    border-color: #AB6953;
+    color: #EDD1C5;
+    box-shadow: 0 8px 20px rgba(171, 105, 83, 0.3);
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Footer */
+.footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(62, 76, 51, 0.2);
+    animation: fadeInUp 1s ease-out 1.2s both;
+}
+
+.footer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #3E4C33;
+    opacity: 0.7;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .coming-soon-container {
+        padding: 1.5rem;
+    }
+
+    .background-pattern {
+        background-size: 300px 300px;
+    }
+
+    .brand-name {
+        font-size: 3rem;
+    }
+
+    .brand-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .brand-tagline {
+        font-size: 1rem;
+    }
+
+    .countdown-grid {
+        gap: 0.75rem;
+    }
+
+    .time-unit {
+        padding: 1rem 1.25rem;
+        min-width: 90px;
+    }
+
+    .time-value {
+        font-size: 2.5rem;
+    }
+
+    .time-separator {
+        font-size: 2rem;
+        margin: 0 0.25rem;
+    }
+
+    .social-link {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .background-pattern {
+        background-size: 200px 200px;
+    }
+
+    .brand-name {
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+    }
+
+    .brand-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .countdown-grid {
+        gap: 0.5rem;
+    }
+
+    .time-unit {
+        padding: 0.75rem 1rem;
+        min-width: 70px;
+    }
+
+    .time-value {
+        font-size: 2rem;
+    }
+
+    .time-label {
+        font-size: 0.75rem;
+    }
+
+    .time-separator {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+}
