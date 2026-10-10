@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Modo Quotes — Compare quotes from local contractors</title>
+  <meta name="description" content="Describe your job once and get up to 5 free, non-binding quotes from vetted local contractors. Renovation, painting, roofing, moving, cleaning and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Modo Quotes home">
+        <span class="logo-mark" aria-hidden="true">M</span>
+        <span class="logo-text">Modo<strong>Quotes</strong></span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <a href="#services">Services</a>
+        <a href="#how">How it works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#companies">For companies</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#companies" class="link-muted hide-sm">Log in</a>
+        <button class="btn btn-primary btn-sm" data-open-quote>Get quotes</button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Free &amp; non-binding</p>
+          <h1>Get quotes from the best local contractors</h1>
+          <p class="lead">Describe your job once. Up to 5 vetted companies send you their price — you compare and choose. It takes 2 minutes.</p>
+
+          <form class="hero-search" id="hero-search" autocomplete="off">
+            <label for="hero-input" class="sr-only">What do you need help with?</label>
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input id="hero-input" type="text" placeholder="What do you need help with? e.g. painting" list="service-list">
+              <datalist id="service-list"></datalist>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Get free quotes</button>
+          </form>
+
+          <ul class="hero-points">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Vetted companies</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Free for you</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>No obligation</li>
+          </ul>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <div class="hc-head">
+            <span class="hc-dot"></span>
+            <span>Bathroom renovation · 12 m²</span>
+          </div>
+          <div class="hc-quote">
+            <div class="hc-avatar" style="--c:#0f766e">NB</div>
+            <div><strong>Nordic Build AB</strong><span class="stars">★★★★★ <em>4.9</em></span></div>
+            <div class="hc-price">€8,400</div>
+          </div>
+          <div class="hc-quote">
+            <div class="hc-avatar" style="--c:#b45309">HR</div>
+            <div><strong>Home Reno Pro</strong><span class="stars">★★★★☆ <em>4.6</em></span></div>
+            <div class="hc-price">€9,150</div>
+          </div>
+          <div class="hc-quote best">
+            <div class="hc-avatar" style="--c:#4338ca">VS</div>
+            <div><strong>Våtrum Specialisten</strong><span class="stars">★★★★★ <em>4.8</em></span></div>
+            <div class="hc-price">€7,950</div>
+          </div>
+          <div class="hc-foot">3 of 5 quotes received</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust bar -->
+    <section class="trust">
+      <div class="container trust-inner">
+        <div><strong data-count="120000">0</strong><span>jobs posted</span></div>
+        <div><strong data-count="8500">0</strong><span>vetted companies</span></div>
+        <div><strong data-count="4.7" data-decimals="1">0</strong><span>average rating</span></div>
+        <div><strong data-count="30" data-suffix="%">0</strong><span>average saving</span></div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>What do you need help with?</h2>
+          <p>Choose a category to start your free quote request.</p>
+        </div>
+        <div class="service-grid" id="service-grid"></div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section-alt" id="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p>Three simple steps from idea to finished job.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <h3>Describe your job</h3>
+            <p>Tell us what you need done, where and when. It's free and takes about two minutes.</p>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <h3>Receive quotes</h3>
+            <p>Up to 5 qualified local companies send you their quotes, usually within 24 hours.</p>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <h3>Compare &amp; choose</h3>
+            <p>Compare prices, reviews and credentials. Pick the best fit — or none at all.</p>
+          </li>
+        </ol>
+        <div class="center">
+          <button class="btn btn-primary btn-lg" data-open-quote>Start your request</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section class="section">
+      <div class="container why">
+        <div class="why-copy">
+          <h2>Safe hiring, every time</h2>
+          <p>Every company is checked before it can send quotes. We verify registration, tax status and insurance — and only companies with good reviews stay on the platform.</p>
+          <ul class="checklist">
+            <li>Credit and registration checks</li>
+            <li>Verified reviews from real customers</li>
+            <li>Free contract templates for your job</li>
+            <li>Personal support if something goes wrong</li>
+          </ul>
+        </div>
+        <div class="why-cards">
+          <div class="mini-card"><span class="mini-icon">🛡️</span><h3>Vetted</h3><p>Background-checked companies only.</p></div>
+          <div class="mini-card"><span class="mini-icon">⚡</span><h3>Fast</h3><p>Most get their first quote within hours.</p></div>
+          <div class="mini-card"><span class="mini-icon">💸</span><h3>Save money</h3><p>Competition gives you better prices.</p></div>
+          <div class="mini-card"><span class="mini-icon">🤝</span><h3>No obligation</h3><p>You decide if and who to hire.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section section-alt" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h2>What our customers say</h2>
+          <p>Sample reviews — replace with your own customers' feedback.</p>
+        </div>
+        <div class="reviews" id="reviews-track"></div>
+      </div>
+    </section>
+
+    <!-- For companies -->
+    <section class="section companies" id="companies">
+      <div class="container companies-inner">
+        <div>
+          <p class="eyebrow light">For companies</p>
+          <h2>Grow your business with new customers</h2>
+          <p>Get matched with customers who are ready to hire in your area. Pick the jobs you want, send your quote, and win more work — without cold calls or advertising.</p>
+          <ul class="checklist light">
+            <li>New job requests every day</li>
+            <li>Only jobs in your region and trade</li>
+            <li>Build your reputation with reviews</li>
+          </ul>
+        </div>
+        <form class="company-form" id="company-form" novalidate>
+          <h3>Register your company</h3>
+          <label>Company name<input name="company" required></label>
+          <label>Registration number<input name="orgnr" required></label>
+          <label>Email<input type="email" name="email" required></label>
+          <label>Phone<input type="tel" name="phone" required></label>
+          <button class="btn btn-accent btn-block" type="submit">Get started</button>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Does it cost anything to request quotes?</summary>
+            <p>No. Posting a job and receiving quotes is completely free and without obligation. Companies pay a fee to access job requests.</p>
+          </details>
+          <details>
+            <summary>How many quotes will I get?</summary>
+            <p>You will receive up to 5 quotes from companies in your area. Most requests receive their first quote within 24 hours.</p>
+          </details>
+          <details>
+            <summary>Do I have to hire one of the companies?</summary>
+            <p>No. You are free to decline all quotes. You only hire when you have found the right company at the right price.</p>
+          </details>
+          <details>
+            <summary>How are companies checked?</summary>
+            <p>We verify company registration, tax status and credit history, and continuously monitor customer reviews. Companies that don't meet our standards are removed.</p>
+          </details>
+          <details>
+            <summary>Can I get a tax deduction for the work?</summary>
+            <p>In many countries, labour costs for home repairs and renovation are partly tax-deductible. Ask the companies to include the deduction in their quotes.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta-inner">
+        <h2>Ready to get started?</h2>
+        <p>Describe your job and get free quotes today.</p>
+        <button class="btn btn-accent btn-lg" data-open-quote>Get free quotes</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="logo logo-light">
+          <span class="logo-mark" aria-hidden="true">M</span>
+          <span class="logo-text">Modo<strong>Quotes</strong></span>
+        </a>
+        <p class="footer-about">Compare quotes from vetted local contractors — free and without obligation.</p>
+      </div>
+      <div>
+        <h4>Popular services</h4>
+        <ul id="footer-services"></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#companies">For companies</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#top">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+          <li>Mon–Fri 08:00–17:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Modo Quotes. All rights reserved.</span>
+      <span><a href="#top">Privacy</a> · <a href="#top">Terms</a> · <a href="#top">Cookies</a></span>
+    </div>
+  </footer>
+
+  <!-- Quote request wizard -->
+  <div class="modal" id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-title" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+
+      <div class="wizard-progress" aria-hidden="true">
+        <span class="wp-bar"><span class="wp-fill" id="wp-fill"></span></span>
+        <span class="wp-label" id="wp-label">Step 1 of 3</span>
+      </div>
+
+      <form id="quote-form" novalidate>
+        <!-- Step 1 -->
+        <fieldset class="step" data-step="1">
+          <legend id="quote-title">What do you need help with?</legend>
+          <div class="choice-grid" id="choice-grid"></div>
+          <p class="field-error" data-error="category"></p>
+        </fieldset>
+
+        <!-- Step 2 -->
+        <fieldset class="step" data-step="2" hidden>
+          <legend>Tell us about the job</legend>
+          <p class="step-sub" id="step2-sub"></p>
+          <label>Describe the job
+            <textarea name="description" rows="4" placeholder="e.g. Repaint living room and hallway, about 45 m² of walls, ceilings included." required minlength="20"></textarea>
+          </label>
+          <p class="field-error" data-error="description"></p>
+          <div class="row">
+            <label>Postcode
+              <input name="postcode" inputmode="numeric" placeholder="e.g. 114 35" required pattern="[0-9 ]{3,8}">
+            </label>
+            <label>Property type
+              <select name="property" required>
+                <option value="">Choose…</option>
+                <option>House</option>
+                <option>Apartment</option>
+                <option>Holiday home</option>
+                <option>Commercial property</option>
+              </select>
+            </label>
+          </div>
+          <p class="field-error" data-error="postcode"></p>
+          <p class="field-error" data-error="property"></p>
+          <span class="label-text">When should the work start?</span>
+          <div class="pill-group">
+            <label class="pill"><input type="radio" name="when" value="As soon as possible" required><span>ASAP</span></label>
+            <label class="pill"><input type="radio" name="when" value="Within 1 month"><span>Within 1 month</span></label>
+            <label class="pill"><input type="radio" name="when" value="Within 3 months"><span>1–3 months</span></label>
+            <label class="pill"><input type="radio" name="when" value="Flexible"><span>Flexible</span></label>
+          </div>
+          <p class="field-error" data-error="when"></p>
+        </fieldset>
+
+        <!-- Step 3 -->
+        <fieldset class="step" data-step="3" hidden>
+          <legend>Where should we send your quotes?</legend>
+          <label>Full name<input name="name" autocomplete="name" required></label>
+          <p class="field-error" data-error="name"></p>
+          <div class="row">
+            <label>Email<input type="email" name="email" autocomplete="email" required></label>
+            <label>Phone<input type="tel" name="phone" autocomplete="tel" required pattern="[0-9 +\(\)\-]{6,}"></label>
+          </div>
+          <p class="field-error" data-error="email"></p>
+          <p class="field-error" data-error="phone"></p>
+          <label class="check">
+            <input type="checkbox" name="consent" required>
+            <span>I agree that up to 5 companies may contact me about this job, and accept the terms and privacy policy.</span>
+          </label>
+          <p class="field-error" data-error="consent"></p>
+        </fieldset>
+
+        <!-- Done -->
+        <div class="step step-done" data-step="4" hidden>
+          <div class="done-icon" aria-hidden="true">✓</div>
+          <h2>Thanks! Your request is on its way</h2>
+          <p id="done-text">Companies in your area will start sending you quotes shortly. Keep an eye on your inbox.</p>
+          <button type="button" class="btn btn-primary" data-close>Done</button>
+        </div>
+
+        <div class="wizard-nav" id="wizard-nav">
+          <button type="button" class="btn btn-ghost" id="btn-back">Back</button>
+          <button type="button" class="btn btn-primary" id="btn-next">Continue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
